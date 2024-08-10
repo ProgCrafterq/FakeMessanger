@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake_Chat-Messanger</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="contacts">
+                <ul class="contact-list">
+                    <li class="contact selected-contact" onclick="selectContact(this)">
+                        <img class="avatar" src="avatar1.jpg" alt="Avatar">
+                        <span class="contact-name">Ещкериец</span>
+                        <input type="hidden" value="Ещкериец" class="contact-name-hidden">
+                    </li>
+                    <li class="contact" onclick="selectContact(this)">
+                        <img class="avatar" src="avatar2.jpg" alt="Avatar">
+                        <span class="contact-name">Тулер Дерден</span>
+                        <input type="hidden" value="Тулер Дерден" class="contact-name-hidden">
+                    </li>
+                    <li class="contact" onclick="selectContact(this)">
+                        <img class="avatar" src="avatar3.jpg" alt="Avatar">
+                        <span class="contact-name">Василий</span>
+                        <input type="hidden" value="Василий" class="contact-name-hidden">
+                    </li>
+                    <li class="contact" onclick="selectContact(this)">
+                        <img class="avatar" src="avatar4.jpg" alt="Avatar">
+                        <span class="contact-name">PHP БОГ</span>
+                        <input type="hidden" value="PHP БОГ" class="contact-name-hidden">
+                    </li>
+                    <li class="contact" onclick="selectContact(this)">
+                        <img class="avatar" src="avatar5.jpg" alt="Avatar">
+                        <span class="contact-name">Тони Старк</span>
+                        <input type="hidden" value="Тони Старк" class="contact-name-hidden">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="user-profile">
+                <span class="user-name">ВЫ:</span>
+                <img class="avatar" src="avatar0.jpg" alt="Your Avatar">
+            </div>
+            <div class="chat-window">
+                <div class="message-list" id="messageList"></div>
+                <div class="input-area">
+                    <input type="text" id="messageInput" placeholder="Введите сообщение...">
+                    <button id="sendMessageButton">
+                        <img src="send-icon.png" alt="Send" class="send-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="modal-button" data-modal="privacy">Конфиденциальность</button>
+            <button class="modal-button" data-modal="info">Информация</button>
+            <div class="theme">
+                <label for="darkTheme">Чёрная тема</label>
+                <input type="checkbox" id="darkTheme" onchange="toggleDarkTheme()">
+            </div>
+            <button class="modal-button" data-modal="settings">Настройки</button>
+        </div>
+        <div id="modal-privacy" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Конфиденциальность</h2>
+        <p>Наши гарантии конфиденциальности включают в себя шифрование конечного до конечного,ведь это фейк чат, строгая политика безопасности и никакого сбора персональной информации без вашего разрешения.</p>
+        <button class="close">Выйти</button>
+    </div>
+</div>
+
+<div id="modal-info" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Информация</h2>
+        <p>Добро пожаловать в мессенджер! Это ваш личный фейк чат, где вы можете общаться с интересными личностями.</p>
+        <button class="close">Выйти</button>
+    </div>
+</div>
+
+<div id="modal-settings" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Настройки</h2>
+        <p>Настройте свой мессенджер так, как вам нравится! Выберите тему оформления и  управляйте уведомлениями! Также у нас есть черная тема для защиты глаз в ночное время, и радужная тема,для оформления! Одновременно черную и радужную тему включать не выйдет.Удачи!</p>
+        <button class="close">Выйти</button>
+        <div class="setting">
+        </div>
+        <div class="setting">
+            <label for="rainbow-theme-toggle">Радужная тема</label>
+            <input type="checkbox" id="rainbow-theme-toggle">
+        </div>
+        <div class="setting" id="rgb-slider" style="display: none;">
+            <label for="red-slider">R</label>
+            <input type="range" min="0" max="255" id="red-slider">
+            <label for="green-slider">G</label>
+            <input type="range" min="0" max="255" id="green-slider">
+            <label for="blue-slider">B</label>
+            <input type="range" min="0" max="255" id="blue-slider">
+        </div>
+        <button class="close">Выйти</button>
+    </div>
+    </div>
+</div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+:root {
+    --custom-bg-color: initial;
+    --custom-text-color: initial;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--custom-bg-color, #fff);
+    color: var(--custom-text-color, #000);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contacts {
+    margin-bottom: 20px;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.contact-name {
+    font-size: 16px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.message-list {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    height: calc(100vh - 300px);
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.message .avatar {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.input-area input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.input-area button {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.footer button {
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.theme {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.theme label {
+    margin-right: 10px;
+}
+
+.selected-contact {
+    background-color: #b6aeae;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme .sidebar,
+.dark-theme .footer {
+    background-color: #444;
+}
+
+.dark-theme input[type="text"],
+.dark-theme button,
+.dark-theme .input-area {
+    background-color: #666;
+    color: #fff;
+}
+
+.dark-theme .selected-contact {
+    border: 1px solid #fff;
+}
+
+.dark-theme .modal-content {
+    background-color: #000;
+}
+
+.dark-theme .modal-content h2,
+.dark-theme .modal-content p,
+.dark-theme .modal-content .close {
+    color: white;
+}
+
+
+.custom-theme .sidebar,
+.custom-theme .footer,
+.custom-theme .contact-list .contact,
+.custom-theme .modal-content,
+.custom-theme .input-area {
+    background-color: var(--custom-bg-color);
+    color: var(--custom-text-color);
+}
+
+.custom-theme .selected-contact {
+    border: 1px solid var(--custom-text-color);
+}
+
+.custom-theme .input-area input {
+    background-color: var(--custom-bg-color);
+    color: var(--custom-text-color);
+}
+
+.custom-theme .input-area button {
+    background-color: var(--custom-bg-color);
+}
+
+.custom-theme .modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.custom-theme .modal-content {
+    background-color: var(--custom-bg-color);
+    color: var(--custom-text-color);
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
